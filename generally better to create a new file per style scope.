@@ -1,0 +1,49 @@
+[1mdiff --git a/app/assets/stylesheets/application.css b/app/assets/stylesheets/application.css[m
+[1mindex d05ea0f..e664819 100644[m
+[1m--- a/app/assets/stylesheets/application.css[m
+[1m+++ b/app/assets/stylesheets/application.css[m
+[36m@@ -11,5 +11,4 @@[m
+  * It is generally better to create a new file per style scope.[m
+  *[m
+  *= require_tree .[m
+[31m- *= require_self[m
+[31m- */[m
+[32m+[m[32m *= require_self[m
+\ No newline at end of file[m
+[1mdiff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb[m
+[1mindex 57e8c29..a46c906 100644[m
+[1m--- a/app/views/layouts/application.html.erb[m
+[1m+++ b/app/views/layouts/application.html.erb[m
+[36m@@ -5,12 +5,20 @@[m
+     <meta name="viewport" content="width=device-width,initial-scale=1">[m
+     <%= csrf_meta_tags %>[m
+     <%= csp_meta_tag %>[m
+[31m-[m
+[32m+[m[41m    [m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">[m
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>[m
+     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>[m
+[32m+[m[32m    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>[m
+   </head>[m
+ [m
+[31m-  <body>[m
+[31m-    <%= yield %>[m
+[32m+[m[32m  <body data-turbolinks="false">[m
+[32m+[m[32m    <%= render 'layouts/navbar' %>[m
+[32m+[m[41m    [m
+[32m+[m[32m    <div class="container">[m
+[32m+[m[32m      <%= render 'layouts/flash_messages' %>[m
+[32m+[m[41m      [m
+[32m+[m[32m      <%= yield %>[m
+[32m+[m[32m    </div>[m
+   </body>[m
+ </html>[m
+[1mdiff --git a/config/routes.rb b/config/routes.rb[m
+[1mindex c06383a..5ce8bf5 100644[m
+[1m--- a/config/routes.rb[m
+[1m+++ b/config/routes.rb[m
+[36m@@ -1,3 +1,4 @@[m
+ Rails.application.routes.draw do[m
+   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html[m
+[32m+[m[32m  root to: 'toppages#index'[m
+ end[m

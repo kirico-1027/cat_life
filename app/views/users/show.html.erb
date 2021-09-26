@@ -1,2 +1,45 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container-fluid" style="margin-top: 30px; padding: 0 30px;">
+  <div class="neco-commenter mb-4">
+    <h5><%= @user.name %>さんのコメント</h5>
+  </div>
+
+  <% @comments.each do |comment| %>
+    <div class="row mb-3">
+      <h5 class="card-title"><%= comment.item.name %></h5>
+      <aside class="col-sm-4">
+        <div class="card border border-0">
+          <div class="card-body p-4">
+            <%= image_tag  comment.item.image_name,  class: "card-img-top" %>
+          </div>
+        </div>
+      </aside>
+      <div class="col-sm-8 pt-4">
+        <%= comment.item.content %>
+      </div>
+    </div> 
+        
+    <% if current_user == comment.user %>
+      <div class="border rounded mb-2">
+        <div class="title fw-bold pt-3" style="padding-left: 15px;">
+          <p><%= comment.title %></p>
+        </div>
+        <div class="comment" style="padding-left: 15px;">
+          <p><%= comment.content %></p>
+        </div>
+            
+        <div class="delete d-flex justify-content-end pb-3" style="padding-right: 20px;">
+          <%= link_to "削除する",item_comment_path(comment.item.id, comment.id), method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger btn-sm' %>
+        </div> 
+      </div>
+      <% else %>
+      <div class="border rounded mb-2">
+        <div class="title fw-bold pt-3" style="padding-left: 15px;">
+          <p><%= comment.title %></p>
+        </div>
+        <div class="comment" style="padding-left: 15px;">
+          <p><%= comment.content %></p>
+        </div>
+      </div>      
+    <% end %>
+  <% end %>
+</div>

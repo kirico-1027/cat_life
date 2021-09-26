@@ -1,0 +1,20 @@
+<% if comments.any? %>
+  <div class="comment-list mt-1">
+    <% comments.each do |comment| %>
+    <div class="border rounded mb-2">
+      <div class="title fw-bold pt-3" style="padding-left: 15px;">
+        <p><%= comment.title %></p>
+      </div>
+      <div class="comment" style="padding-left: 15px;">
+        <p><%=safe_join(comment.content.split("\n"),tag(:br))%></p>
+      </div>
+      <div class="commenter pb-3" style="padding-left: 15px;">
+          <%= link_to comment.user.name, user_path(comment.user.id), class: "text-decoration-none" %>さん
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %> 
+
+

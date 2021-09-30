@@ -19,6 +19,7 @@ a:active { color: #7EBEA5; }
 
 .good {
     background-color: #F4B3C2;
+    padding-right: 13px
 }
 
 .g {
@@ -27,6 +28,7 @@ a:active { color: #7EBEA5; }
 
 .no-good {
     background-color: #E9EEF3;
+    padding-right: 13px
 }
 
 .ns {
@@ -35,4 +37,16 @@ a:active { color: #7EBEA5; }
 
 .btn-danger {
     background-color: #F73B70;
+}
+
+.gs {
+    font-size: 13px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.page-item.active
+.page-link {
+    background-color: #69C2C7;
+    border-color: #69C2C7;
 }

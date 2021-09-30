@@ -45,3 +45,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pagy'
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'aws-sdk-s3', require: false
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end

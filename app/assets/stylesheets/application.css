@@ -1,8 +1,8 @@
 
-a:link { color: #984C00; }
-a:visited { color: #984C00; }
-a:hover { color: #984C00; }
-a:active { color: #984C00; }
+a:link { color: #008899; }
+a:visited { color: #008899; }
+a:hover { color: #7EBEA5; }
+a:active { color: #7EBEA5; }
 
 .text-center a {
     color: #FFFFFF;
@@ -10,4 +10,29 @@ a:active { color: #984C00; }
 
 .delete a {
     color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: #B0CA71;
+    border: 0;
+}
+
+.good {
+    background-color: #F4B3C2;
+}
+
+.g {
+    color: #FFFFFF;
+}
+
+.no-good {
+    background-color: #E9EEF3;
+}
+
+.ns {
+    color: #656565;
+}
+
+.btn-danger {
+    background-color: #F73B70;
 }

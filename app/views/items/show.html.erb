@@ -1,9 +1,9 @@
-<div class="container-fluid" style="margin-top: 30px; padding: 0 30px;">
+<div class="container mt-5" style="width: 900px;">
   <div class="row mb-3">
-    <h5 class="card-title"><%= @item.name %></h5>
+    <h5 class="card-title pr-3"><%= @item.name %></h5>
     <aside class="col-sm-4">
       <div class="card border border-0">
-        <div class="card-body p-4">
+        <div class="card-body p-3">
          <%= image_tag  @item.image_name, class: "card-img-top" %>
         </div>
       </div>
@@ -12,7 +12,7 @@
       <%= @item.content %>
     </div>
   </div>  
-    <div class="text-center" style="margin: 20px;">
+    <div class="text-center my-4">
        <%= link_to 'コメントする', new_item_comment_path(@item.id), class: 'btn btn-success' %>
     </div>
     <div class="comments">

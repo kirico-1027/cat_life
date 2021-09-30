@@ -13,11 +13,12 @@
   </head>
 
   <body data-turbolinks="false">
-    
+    <%= render 'layouts/navbar' %>
     
     <div class="container">
-      <%= render 'layouts/flash_messages' %>
-      <%= render 'layouts/navbar' %>
+      <div class="message" style="padding: 0 120px;">
+        <%= render 'layouts/flash_messages' %>
+      </div>
       <%= yield %>
     </div>
   </body>

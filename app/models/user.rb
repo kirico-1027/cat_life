@@ -7,4 +7,14 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
+  def favorite(comment)
+    favorites.find_or_create_by(comment_id: comment.id)
+  end
+  
+  def unfavorite(comment)
+    favorite = favorites.find_by(comment_id: comment.id)
+    favorite.destroy if favorite
+  end
 end

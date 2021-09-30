@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :items, only: [:show] do
     resources :comments, only: [:new, :show, :create, :destroy]
   end
+
+  resources :favorites, only: [:create, :destroy]
 end

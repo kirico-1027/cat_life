@@ -1,15 +1,15 @@
 <% if comment.likes.include?(current_user) %>
     <%= form_with(model: current_user.favorites.find_by(comment_id: comment.id), method: :delete) do |f| %>
       <%= hidden_field_tag :comment_id, comment.id %>
-      <h6 class="badge rounded-pill good">
-        <%= f.submit 'いいね', class: 'btn  btn-sm g'%><span class="gs"><%= comment.likes.count %></span>
+      <h6 class="badge rounded-pill good mr-0">
+        <%= f.submit 'いいね', class: 'btn btn-sm g' %><span class="gs"><%= comment.likes.count %></span>
       </h6>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.favorites.build) do |f| %>
       <%= hidden_field_tag :comment_id, comment.id %>
       <h6 class="badge rounded-pill no-good">
-        <%= f.submit 'いいね', class: 'btn  btn-sm ng' %><span class="gs"><%= comment.likes.count %></span>
+        <%= f.submit 'いいね', class: 'btn btn-sm ng' %><span class="gs"><%= comment.likes.count %></span>
       </h6>
     <% end %>
   <% end %>

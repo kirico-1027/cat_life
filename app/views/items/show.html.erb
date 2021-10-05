@@ -1,10 +1,10 @@
-<div class="container mt-5" style="width: 900px;">
+<div class="container mt-5 px-0 mx-0">
   <div class="row mb-3">
     <h5 class="card-title pr-3"><%= @item.name %></h5>
     <aside class="col-sm-4">
       <div class="card border border-0">
         <div class="card-body p-3">
-         <%= image_tag  @item.image_name, class: "card-img-top" %>
+         <%= image_tag @item.image_name, alt: @item.name, class: "card-img-top" %>
         </div>
       </div>
     </aside>
@@ -12,10 +12,10 @@
       <%= @item.content %>
     </div>
   </div>  
-    <div class="text-center my-4">
-       <%= link_to 'コメントする', new_item_comment_path(@item.id), class: 'btn btn-success' %>
-    </div>
-    <div class="comments">
-      <%= render 'comments/comments', comments: @comments %>
-    </div>
+  <div class="text-center my-4">
+    <%= link_to 'コメントする', new_item_comment_path(@item.id), class: 'btn btn-success' %>
+  </div>
+  <div class="comments">
+    <%= render 'comments/comments', comments: @comments %>
+  </div>
 </div>

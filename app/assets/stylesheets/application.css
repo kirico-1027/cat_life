@@ -12,6 +12,12 @@ a:active { color: #7EBEA5; }
     color: #FFFFFF;
 }
 
+.btn-danger {
+    background-color: #E95295;
+    margin-right: 26px;
+    margin-bottom: 2px;
+}
+
 .btn-success {
     background-color: #B0CA71;
     border: 0;
@@ -19,7 +25,7 @@ a:active { color: #7EBEA5; }
 
 .good {
     background-color: #F4B3C2;
-    padding-right: 13px
+    padding-right: 13px;
 }
 
 .g {
@@ -35,10 +41,6 @@ a:active { color: #7EBEA5; }
     color: #656565;
 }
 
-.btn-danger {
-    background-color: #F73B70;
-}
-
 .gs {
     font-size: 13px;
     font-weight: 500;
@@ -49,4 +51,35 @@ a:active { color: #7EBEA5; }
 .page-link {
     background-color: #69C2C7;
     border-color: #69C2C7;
+}
+
+.cards {
+    margin: 0 15px 50px;
+}
+
+.container {
+     width: 900px;
+     
+}
+
+.forms {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 620px;
+}
+
+.row {
+    width: 900px;
+}
+
+.text-center {
+     margin: 80px;
+}
+
+.comment {
+    padding-left: 15px;
+}
+
+.user-favo {
+    padding-right: 20px;
 }
